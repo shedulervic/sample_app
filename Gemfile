@@ -24,7 +24,7 @@ gem 'turbolinks'
 # Use Redis adapter to run Action Cable in production # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
-gem 'wdm', '>= 0.1.0'
+#gem 'wdm', '>= 0.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
