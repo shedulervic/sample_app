@@ -2,6 +2,5 @@
 
 #require_relative 'config/environment'
 
-$:.unshift File.expand_path("../lib", __FILE__) require'foo'
-
+require File.expand_path("../lib/foo", __FILE__)
 run Rails.application
