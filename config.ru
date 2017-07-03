@@ -2,5 +2,5 @@
 
 #require_relative 'config/environment'
 
-require File.expand_path("../lib/foo", __FILE__)
+require File.expand_path("../lib/assets", __FILE__)
 run Rails.application
