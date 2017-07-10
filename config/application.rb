@@ -9,6 +9,7 @@ Bundler.require(*Rails.groups)
 module SampleApp
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
+	#config.action_controller.include_all_helpers = false
     config.load_defaults 5.1
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     # Settings in config/environments/* take precedence over those specified here.

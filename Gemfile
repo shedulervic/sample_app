@@ -12,6 +12,7 @@ gem 'rails', '~> 5.1.1'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 gem 'bcrypt-ruby'
+gem 'jquery-rails'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets gem 'uglifier', '>= 1.3.0'
@@ -19,6 +20,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'tzinfo-data'
 # Use CoffeeScript for .coffee assets and views gem 'coffee-rails', '~> 4.2'
 gem 'coffee-script-source', '1.8.0'
+gem 'coffee-rails'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder gem 'jbuilder', '~> 2.5'
@@ -30,6 +32,8 @@ gem 'turbolinks'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
+  gem 'cucumber-rails'
+  gem 'database_cleaner', github: 'bmabey/database_cleaner'
   gem 'guard-rspec'
   gem 'rspec-rails'
   gem 'sqlite3'
