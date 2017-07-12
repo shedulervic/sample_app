@@ -33,6 +33,7 @@ gem 'turbolinks'
 gem 'will_paginate', '~> 3.1'
 gem 'bootstrap-will_paginate'
 gem 'bootstrap-sass'  
+gem 'faker'
   
 group :development, :test do
   
@@ -46,7 +47,7 @@ group :development, :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'factory_girl_rails'
-  gem 'faker'
+  
   
 end
 group :test do
