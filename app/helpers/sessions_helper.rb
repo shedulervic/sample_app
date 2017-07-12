@@ -15,12 +15,16 @@ def sign_in(user)
   
    def current_user=(user)
     @current_user = user
-  end
+   end
   
   def current_user
     remember_token = User.encrypt(cookies[:remember_token])
     @current_user ||= User.find_by(remember_token: remember_token)
 	# если @current_user = nil то false и выполняем после ||=
+  end
+  
+  def current_user?(user)
+    user == current_user
   end
   
   def sign_out
@@ -29,4 +33,16 @@ def sign_in(user)
 	self.current_user = nil
   end
   
+  #объект session предоставляемый Rails как экземпляр переменной cookies которая
+  #автоматически истекает при закрытии браузера
+  def redirect_back_or(default)
+    redirect_to(session[:return_to] || default)
+	session.delete(:return_to)
+  end
+  
+  #помещает запрашиваемый URL в переменную session под ключом :return_to,
+  # но только для GET запроса (if request.get?)
+  def store_location
+    session[:return_to] = request.url if request.get?
+  end
 end

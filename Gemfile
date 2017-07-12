@@ -30,9 +30,12 @@ gem 'turbolinks'
 #gem 'wdm', '>= 0.1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+gem 'will_paginate', '~> 3.1'
+gem 'bootstrap-will_paginate'
+gem 'bootstrap-sass'  
+  
 group :development, :test do
-  gem 'cucumber-rails'
+  
   gem 'database_cleaner', github: 'bmabey/database_cleaner'
   gem 'guard-rspec'
   gem 'rspec-rails'
@@ -42,10 +45,13 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara'
   gem 'selenium-webdriver'
-  gem 'bootstrap-sass'
   gem 'factory_girl_rails'
+  gem 'faker'
+  
 end
-
+group :test do
+gem 'cucumber-rails'
+end
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console', '>= 3.3.0'
