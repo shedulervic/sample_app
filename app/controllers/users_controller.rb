@@ -6,6 +6,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+	@microposts = @user.microposts.paginate(page: params[:page])
   end
 
   def index
@@ -41,7 +42,7 @@ class UsersController < ApplicationController
 	end
 	
 	def destroy
-	  User.find(params[:id])
+	  User.find(params[:id]).destroy
 	  flash[:success] = "User deleted!"
 	  redirect_to users_url
 	end
@@ -51,17 +52,6 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password,
                                    :password_confirmation)
     end
-	
-	
-	#unless оператор если не
-	def signed_in_user
-	  # signed_in определен в session_controller
-	  unless signed_in?
-	     store_location
-         flash[:warning] = "Please sign in."
-         redirect_to signin_url
-      end
-	end
 	
 	def correct_user
 	  @user = User.find(params[:id])

@@ -13,6 +13,16 @@ def sign_in(user)
 	# то есть sign_in? true когда current_user не nill
    end
   
+  #unless оператор если не
+  def signed_in_user
+	  # signed_in определен в session_controller
+	  unless signed_in?
+	     store_location
+         flash[:warning] = "Please sign in."
+         redirect_to signin_url
+      end
+	end
+  
    def current_user=(user)
     @current_user = user
    end
