@@ -173,12 +173,24 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+#count_theme
 
-#error_explanation {
+count_theme{
+  color: #80c5ff;
+}
+
+count_theme ul{
+  list-style: none;
+  margin: 0 0 18px;
+}
+
+#error_explanation
+
+error_explanation {
 	color: #f00;
 }
 
-#error_explanation ul {
+error_explanation ul {
 	list-style: none;
     margin: 0 0 18px 0;
 }
